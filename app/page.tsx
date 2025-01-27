@@ -1,6 +1,8 @@
 import { BlogPosts } from "app/components/posts";
 import utilStyles from "./styles/utilStyles.module.css";
 import { Projects } from "./staticData/projects";
+import photos from "./staticData/photos";
+import blogStyles from "./blog/blog.module.css";
 
 export default function Page() {
 	return (
@@ -12,13 +14,24 @@ export default function Page() {
 				{`Passionate and Driven Software Developer/Engineer`}
 			</h2>
 			<br></br>
+			<div className={blogStyles.photoContainer}>
+				{photos.map((photo) => (
+					<a href={photo.externalUrl} target="_blank" rel="noopener">
+						<img
+							src={photo.src}
+							className="coverImage"
+							alt={photo.alt}
+						></img>
+					</a>
+				))}
+			</div>
 			<div className="my-8">
 				<BlogPosts />
-			</div>
+			</div><h2 className="mb-4 text-2xl">Notable Personal Projects</h2>
 			<div
 				className={utilStyles.leftAlign + " " + utilStyles.marginSpace}
 			>
-				<h3>Notable Personal Projects</h3>
+				
 				<ul>
 					{Projects.sort((p1, p2) => p1.sortOrder - p2.sortOrder).map(
 						(project) => (
