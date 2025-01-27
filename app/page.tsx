@@ -25,13 +25,14 @@ export default function Page() {
 					</a>
 				))}
 			</div>
+			<h2 className="mb-4 text-2xl">Blog Posts</h2>
 			<div className="my-8">
 				<BlogPosts />
-			</div><h2 className="mb-4 text-2xl">Notable Personal Projects</h2>
+			</div>
+			<h2 className="mb-4 text-2xl">Notable Personal Projects</h2>
 			<div
 				className={utilStyles.leftAlign + " " + utilStyles.marginSpace}
 			>
-				
 				<ul>
 					{Projects.sort((p1, p2) => p1.sortOrder - p2.sortOrder).map(
 						(project) => (
